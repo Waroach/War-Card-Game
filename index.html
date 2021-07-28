@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    	<meta charset="utf-8">
+    	<meta name="description" content="This is where your description goes">
+    	<meta name="keywords" content="one, two, three">
+
+		<title>WAR! The card game.</title>
+
+		<!-- external CSS link -->
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<div>
+			<h1>WAR!</h1>
+		</div>
+		<div>
+			<h3>Rules of battle.</h3>
+			<p>1) small scurmashes are one card each.</p>
+			<p>Draw one card and compare it against your opponent.
+				Highest card wins, and takes both cards.
+				(Ignore suites)
+				Once a player has the whole deck of cards, they are declared the winner.
+			</p>
+			<p>2) Battles of war happen when a scurmash ties.</p>
+			<p>
+				(both players play the same amount of )
+				Three cards will be drawn from each deck (if available) and the fourth card from each will be compared.
+				Highest card wins. Winner takes all 10 cards.
+			</p>
+		</div>
+		<!--start-->
+		<div class="deck">
+			<h1>A Deck of Cards</h1>
+	
+			<a href="javascript:void(0)" class="btn" onclick="shuffle()">Shuffle</a>
+			<div id="deck"></div>
+		</div>
+		<!-- END -->
+		
+		<div>&copy; by Brent Rankin, brent.rankin@gmail.com.</div>
+		
+		<script type="text/javascript" src="js/main.js"></script>
+	</body>
+</html>	

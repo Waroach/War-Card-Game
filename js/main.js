@@ -2,33 +2,33 @@ let suits = ['Spades','Diamonds','Clubs','Hearts']
 let values = ['2','3','4','5','6','7','8','9','10','J','Q','K','A']
 let deck=[],hand1=[],hand2=[]
 
-document.querySelector('#play').addEventListener(onclick, makeDecks())
-
-function makeDecks(){
+document.querySelector('#play').addEventListener('click', renderDeck)
+function getDecks(){
     for(i=0;i<suits.length;i++){
         for(x=0;x<values.length;x++){
             let card = {Value: values[x], Suit: suits[i]}
             deck.push(card)
         }
     }
+    return deck
+}
+getDecks()
+
+
+function renderDeck(hand){
     hand1 = deck.splice(26)
     hand2 = deck.splice(0,26)
-}
-
-
-function renderDeck(deck){
     document.getElementById("deck").innerHTML = ""
 
-	for(let i = 0; i < deck.length; i++)
-	{
+	for(i=0;i<hand.length;i++){
 		let card = document.createElement("div")
 		let value = document.createElement("div")
 		let suit = document.createElement("div")
 		card.className = "card"
 		value.className = "value"
-		suit.className = `suit ${deck[i].Suit}`
+		suit.className = `suit ${hand1[i].Suit}`
 
-		value.innerHTML = deck[i].Value
+		value.innerHTML = hand1[i].Value
 		card.appendChild(value)
 		card.appendChild(suit)
 
@@ -36,10 +36,6 @@ function renderDeck(deck){
 	}
 }
 
-
-makeDecks()
-console.log(hand1)
-console.log(hand2)
 
 
 

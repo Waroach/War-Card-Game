@@ -2,33 +2,40 @@ let suits = ['Spades','Diamonds','Clubs','Hearts']
 let values = ['2','3','4','5','6','7','8','9','10','J','Q','K','A']
 let deck=[],hand1=[],hand2=[]
 
-document.querySelector('#play').addEventListener('click', renderDeck)
-function getDecks(){
+document.querySelector('#play').addEventListener('click', Decks)
+function Decks(){
     for(i=0;i<suits.length;i++){
         for(x=0;x<values.length;x++){
             let card = {Value: values[x], Suit: suits[i]}
             deck.push(card)
         }
     }
-    return deck
+    createHands()
 }
-getDecks()
 
+function createHands(){
+    hand1 = deck.splice(26) // Clubs and Hearts
+    hand2 = deck.splice(0,26) // Spades and Diamonds
+    
+    //NEEDS TO CHANGE Not fully working
+    renderDeck(hand1)
+}
 
-function renderDeck(hand){
-    hand1 = deck.splice(26)
-    hand2 = deck.splice(0,26)
+function renderDeck(h){
     document.getElementById("deck").innerHTML = ""
 
-	for(i=0;i<hand.length;i++){
+	for(i=0;i<h.length;i++){
+        console.log(h[i].Value)
+        console.log(h[i].Suit)
 		let card = document.createElement("div")
 		let value = document.createElement("div")
 		let suit = document.createElement("div")
 		card.className = "card"
 		value.className = "value"
-		suit.className = `suit ${hand1[i].Suit}`
+		suit.className = `suit ${h[i].Suit}`
 
-		value.innerHTML = hand1[i].Value
+            // console.log(hand1[3].Suit)
+		value.innerHTML = h[i].Value
 		card.appendChild(value)
 		card.appendChild(suit)
 

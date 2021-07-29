@@ -24,6 +24,7 @@ function createHands(){
 function renderDeck(h){
     // Sets div id with deck to ""
     document.getElementById("deck").innerHTML = ""
+    document.getElementById("player2").innerHTML = ""
 
 	for(i=0;i<h.length;i++){
         console.log(h[i].Value)

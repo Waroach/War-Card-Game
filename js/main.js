@@ -22,6 +22,7 @@ function createHands(){
 }
 
 function renderDeck(h){
+    // Sets div id with deck to ""
     document.getElementById("deck").innerHTML = ""
 
 	for(i=0;i<h.length;i++){

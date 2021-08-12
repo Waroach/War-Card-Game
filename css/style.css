@@ -28,7 +28,9 @@ img{
 	width: 95px;
 	height: 150px;
 	float:left;
-	background-color: white;
+	background-color: black;
+	background-image: url('/images/oldBlank.jpg');
+	background-size:contain;
 	padding: 3px 3px 3px 3px;
 	margin: 5px;
 }
@@ -48,29 +50,37 @@ img{
 }
 
 .card .value{
+	text-align:center;
 	font-size:15pt;
-	font-family: sans-serif;
+	color:black;
+	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .card .suit
 {
-	background-image: url('https://www.thatsoftwaredude.com/images/post/0f631eeb-6c4a-4bfd-9f86-e0a08ae8584b.png');
+	background-image: url('/images/suits.png');
 	height: 100px;
 	width: 90px;
+}
+
+.card .spades
+{
+	background-position-x:95px;
+	background-position-y:100px;
 }
 
 .card .diamonds
 {
 	background-position-y: 100px;
-}
-
-.card .hearts
-{
-	background-position-x: 90px;
+	background-position-x: -7px;
 }
 
 .card .clubs
 {
-	background-position-x:90px;
-	background-position-y:100px;
+	background-position-x:-7px;
+}
+
+.card .hearts
+{
+	background-position-x: 295px;
 }

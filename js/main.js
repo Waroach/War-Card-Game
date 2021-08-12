@@ -1,4 +1,4 @@
-let suits = ['Spades','Diamonds','Clubs','Hearts']
+let suits = ['spades','diamonds','clubs','hearts']
 let values = ['2','3','4','5','6','7','8','9','10','J','Q','K','A']
 let deck=[],hand1=[],hand2=[]
 // START Building the card deck
@@ -17,21 +17,22 @@ function deckMaker(){
 function createHands(){
     hand1 = deck.splice(26) // Clubs and Hearts
     hand2 = deck.splice(0,26) // Spades and Diamonds
-    
-    //NEEDS TO CHANGE Not fully working
-    renderDeck(hand1)
-    renderDeck(hand2)
 }
 // END Split the deck into two hands.
 
+
+
+
+
+
+
+
+
 function renderDeck(h){
     // Sets div id with deck to ""
-    document.getElementById("player1").innerHTML = ""
-    document.getElementById("player2").innerHTML = ""
+    document.getElementById("newDeck").innerHTML = ""
 
 	for(i=0;i<h.length;i++){
-        console.log(h[i].Value)
-        console.log(h[i].Suit)
 		let card = document.createElement("div")
 		let value = document.createElement("div")
 		let suit = document.createElement("div")
@@ -39,12 +40,11 @@ function renderDeck(h){
 		value.className = "value"
 		suit.className = `suit ${h[i].Suit}`
 
-            // console.log(hand1[3].Suit)
 		value.innerHTML = h[i].Value
 		card.appendChild(value)
 		card.appendChild(suit)
-
-		document.getElementById("deck").appendChild(card)
+        
+		document.getElementById("newDeck").appendChild(card)
 	}
 }
 

@@ -4,13 +4,18 @@ let deck=[],hand1=[],hand2=[]
 // START Building the card deck
 document.querySelector('#play').addEventListener('click', deckMaker)
 function deckMaker(){
+    // Clear rules
+    document.querySelector('.rules').innerHTML = ""
     for(i=0;i<suits.length;i++){
         for(x=0;x<values.length;x++){
             let card = {Value: values[x], Suit: suits[i]}
             deck.push(card)
         }
     }
+    document.getElementById('play').innerText = 'Shuffle or Reset the game'
     createHands()
+    console.log(hand1,hand2)
+
 }
 // END Building the card deck
 // START Split the deck into two hands.

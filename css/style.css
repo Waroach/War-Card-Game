@@ -16,11 +16,27 @@ img{
 	width: 25%;
 }
 
+body
+{
+	background-color: teal;
+	background-image: url('/images/table.jpg');
+	background-repeat: no-repeat;
+	background-size:cover;
+}
+
+p, h1,h3{
+	color: red;
+}
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
 
 
+
+
+/******************************************
+/* CARD STYLES
+/*******************************************/
 .deck .card
 {
 	border: solid 1px #aaa;

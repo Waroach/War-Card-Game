@@ -1,9 +1,9 @@
 let suits = ['Spades','Diamonds','Clubs','Hearts']
 let values = ['2','3','4','5','6','7','8','9','10','J','Q','K','A']
 let deck=[],hand1=[],hand2=[]
-
-document.querySelector('#play').addEventListener('click', Decks)
-function Decks(){
+// START Building the card deck
+document.querySelector('#play').addEventListener('click', deckMaker)
+function deckMaker(){
     for(i=0;i<suits.length;i++){
         for(x=0;x<values.length;x++){
             let card = {Value: values[x], Suit: suits[i]}
@@ -12,19 +12,22 @@ function Decks(){
     }
     createHands()
 }
-
+// END Building the card deck
+// START Split the deck into two hands.
 function createHands(){
     hand1 = deck.splice(26) // Clubs and Hearts
     hand2 = deck.splice(0,26) // Spades and Diamonds
     
     //NEEDS TO CHANGE Not fully working
     renderDeck(hand1)
+    renderDeck(hand2)
 }
+// END Split the deck into two hands.
 
 function renderDeck(h){
     // Sets div id with deck to ""
-    document.getElementById("deck").innerHTML = ""
-    //document.getElementById("player2").innerHTML = ""
+    document.getElementById("player1").innerHTML = ""
+    document.getElementById("player2").innerHTML = ""
 
 	for(i=0;i<h.length;i++){
         console.log(h[i].Value)

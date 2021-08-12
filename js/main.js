@@ -14,18 +14,31 @@ function deckMaker(){
     }
     document.getElementById('play').innerText = 'Shuffle or Reset the game'
     createHands()
-    console.log(hand1,hand2)
-
 }
 // END Building the card deck
 // START Split the deck into two hands.
 function createHands(){
     hand1 = deck.splice(26) // Clubs and Hearts
     hand2 = deck.splice(0,26) // Spades and Diamonds
+    displayPlayerHands(hand1)
 }
 // END Split the deck into two hands.
 
+function displayPlayerHands(h){
+    for(i=0;i<h.length;i++){
+        let card = document.createElement("div")
+        let value = document.createElement("div")
+        let suit = document.createElement("div")
+        card.className = "card"
+        value.className = "value"
+        suit.className = `suit ${h[i].Suit}`
 
+        value.innerHTML = h[i].Value
+        card.appendChild(value)
+        card.appendChild(suit)
+    }
+    document.getElementById('player1').appendChild(card)
+}
 
 
 

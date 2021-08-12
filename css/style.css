@@ -24,14 +24,21 @@ body
 	background-size:cover;
 }
 
-p, h1,h3{
+p, h1, h3, #copy{
 	color: red;
 }
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
 
-
+#player1{
+	color: white;
+}
+#player2{
+	color: white;
+	display: block;
+	float: right;
+}
 
 
 /******************************************
